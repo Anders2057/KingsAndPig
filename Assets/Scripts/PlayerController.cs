@@ -4,36 +4,51 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Player Components
+    [Header("Player Component")]
+    [SerializeField] private Transform m_transformPlayer;
     private Rigidbody2D m_rigigbody2D;
     private GatherInput m_gatherInput;
-    private Transform m_transformPlayer;
     private Animator m_animator;
 
-    [Header("Move and Jump Settings")]
+    //Animator ID
+    private int idIsGrounded;
+    private int idSpeed;
+
+    [Header("Move Settings")]
     [SerializeField]private float speed;
     private int direction = 1;
     
-    [SerializeField] private bool isJumping;
-
+    [Header("Jump Settings")]
     [SerializeField] private float jumpForce;
     [SerializeField] private int extraJumps;
     [SerializeField] private int CounterExtraJumps;
-    private int idSpeed;
+    [SerializeField] private bool isJumping;
+    [SerializeField] private bool canDoubleJump;
+    
 
     [Header("Ground Settings")]
     [SerializeField] private Transform rFoot;
     [SerializeField] private Transform lFoot;
+    RaycastHit2D lFootRay;
+    RaycastHit2D rFootRay;
     [SerializeField] private bool isGrounded;
     [SerializeField] private float rayLength;
     [SerializeField] private LayerMask groundLayer;
-    private int idIsGrounded;
 
-    void Start()
+    [Header("Wall Settings")]
+    [SerializeField] private float checkWallDistance;
+    [SerializeField] private bool isWallDetected;
+
+    private void Awake()
     {
         m_gatherInput = GetComponent<GatherInput>();
         m_transformPlayer = GetComponent<Transform>();
         m_rigigbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+    }
+    void Start()
+    {
         idSpeed = Animator.StringToHash("Speed");
         idIsGrounded = Animator.StringToHash("IsGrounded");
         lFoot = GameObject.Find("LFoot").GetComponent<Transform>();
@@ -52,9 +67,36 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        CheckCollicion();
         Move();
         jump();
-        CheckGound();
+    }
+    private void CheckCollicion()
+    {
+        HandleGound();
+        HandleWall();
+    }
+
+    private void HandleWall()
+    {
+       isWallDetected = Physics2D.Raycast(m_transformPlayer.transform.position, Vector2.right * direction , checkWallDistance, groundLayer);
+    }
+
+    private void HandleGound()
+    {
+        lFootRay = Physics2D.Raycast(lFoot.position, Vector2.down, rayLength, groundLayer);
+        rFootRay = Physics2D.Raycast(rFoot.position, Vector2.down, rayLength, groundLayer);
+
+        if (lFootRay || rFootRay)
+        {
+            isGrounded = true;
+            CounterExtraJumps = extraJumps;
+            canDoubleJump = false;
+        }
+        else
+        {
+            isGrounded = false;
+        }
     }
 
     private void Move()
@@ -78,8 +120,9 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 m_rigigbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
+                canDoubleJump = true;
             }
-            if(CounterExtraJumps > 0)
+            else if(CounterExtraJumps > 0 && canDoubleJump)
             {
                 m_rigigbody2D.linearVelocity = new Vector2(speed * m_gatherInput.ValueX, jumpForce);
                 CounterExtraJumps--;
@@ -87,19 +130,10 @@ public class PlayerController : MonoBehaviour
         }
         m_gatherInput.IsJumping = false;
     }
-    private void CheckGound()
-    {
-        RaycastHit2D lFootRay = Physics2D.Raycast(lFoot.position, Vector2.down, rayLength, groundLayer);
-        RaycastHit2D rFootRay = Physics2D.Raycast(rFoot.position, Vector2.down, rayLength, groundLayer);
 
-        if (lFootRay || rFootRay)
-        {
-            isGrounded = true;
-            CounterExtraJumps = extraJumps;
-        }
-        else 
-        {
-            isGrounded = false;
-        }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(m_transformPlayer.transform.position, new Vector2(m_transformPlayer.position.x + (checkWallDistance * direction), m_transformPlayer.position.y));
     }
 }
