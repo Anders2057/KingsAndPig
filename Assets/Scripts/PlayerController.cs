@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform rFoot;
     [SerializeField] private Transform lFoot;
     [SerializeField] private bool isGrounded;
-    [SerializeField] private float rayLegnth;
+    [SerializeField] private float rayLength;
     [SerializeField] private LayerMask groundLayer;
     private int idIsGrounded;
 
@@ -89,8 +89,8 @@ public class PlayerController : MonoBehaviour
     }
     private void CheckGound()
     {
-        RaycastHit2D lFootRay = Physics2D.Raycast(lFoot.position, Vector2.down, rayLegnth, groundLayer);
-        RaycastHit2D rFootRay = Physics2D.Raycast(rFoot.position, Vector2.down, rayLegnth, groundLayer);
+        RaycastHit2D lFootRay = Physics2D.Raycast(lFoot.position, Vector2.down, rayLength, groundLayer);
+        RaycastHit2D rFootRay = Physics2D.Raycast(rFoot.position, Vector2.down, rayLength, groundLayer);
 
         if (lFootRay || rFootRay)
         {
