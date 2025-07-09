@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private int idIsGrounded;
     private int idSpeed;
     private int idIsWallDetected;
+    private int idKnockBack;
 
     [Header("Move Settings")]
     [SerializeField]private float speed;
@@ -48,6 +49,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canWallSlide;
     [SerializeField] private float slideSpeed;
 
+    [Header("KnockBack Setting")]
+    [SerializeField] private bool isKnocked;
+    [SerializeField] private bool canBeKnocked;
+    [SerializeField] private Vector2 knockedPower;
+    [SerializeField] private float knockDuration;
+
 
     private void Awake()
     {
@@ -61,6 +68,7 @@ public class PlayerController : MonoBehaviour
         idSpeed = Animator.StringToHash("Speed");
         idIsGrounded = Animator.StringToHash("IsGrounded");
         idIsWallDetected = Animator.StringToHash("IsWallDetected");
+        idKnockBack = Animator.StringToHash("KnockBack");
         lFoot = GameObject.Find("LFoot").GetComponent<Transform>();
         rFoot = GameObject.Find("RFoot").GetComponent<Transform>();
         CounterExtraJumps = extraJumps;
@@ -72,11 +80,13 @@ public class PlayerController : MonoBehaviour
     private void SetAnimatorValue()
     {
         m_animator.SetFloat(idSpeed, Mathf.Abs(m_rigigbody2D.linearVelocityX));
-        m_animator.SetBool(idIsGrounded, isGrounded);
         m_animator.SetBool(idIsWallDetected, isWallDetected);
+        m_animator.SetBool(idIsGrounded, isGrounded);
+        
     }
     void FixedUpdate()
     {
+        if(isKnocked) return;
         CheckCollicion();
         Move();
         jump();
@@ -179,6 +189,21 @@ public class PlayerController : MonoBehaviour
     {
         m_rigigbody2D.linearVelocity = new Vector2(speed * m_gatherInput.Value.x, jumpForce);
         CounterExtraJumps--;
+    }
+    public void KnockBack()
+    {
+        StartCoroutine(KnockBackRountine());
+        m_rigigbody2D.linearVelocity = new Vector2(knockedPower.x * -direction, knockedPower.y);
+        m_animator.SetTrigger(idKnockBack);
+    }
+
+    private IEnumerator KnockBackRountine()
+    {
+        isKnocked = true;
+        canBeKnocked = false;
+        yield return new WaitForSeconds(knockDuration);
+        isKnocked= false;
+        canBeKnocked = true;
     }
 
     private void OnDrawGizmos()
