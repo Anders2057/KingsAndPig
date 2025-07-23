@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Ground
   - Ignore
-  - 
+  - Items
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: FrontGround
     uniqueID: 1716409261
+    locked: 0
+  - name: Items
+    uniqueID: 2613634289
     locked: 0
   m_RenderingLayers:
   - Default

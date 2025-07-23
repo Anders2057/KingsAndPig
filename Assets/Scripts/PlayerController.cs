@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         m_gatherInput = GetComponent<GatherInput>();
-        m_transformPlayer = GetComponent<Transform>();
+       // m_transformPlayer = GetComponent<Transform>();
         m_rigigbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
     }
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
         lFoot = GameObject.Find("LFoot").GetComponent<Transform>();
         rFoot = GameObject.Find("RFoot").GetComponent<Transform>();
         CounterExtraJumps = extraJumps;
+        GameManager.instance.AddScore();
     }
     private void Update()
     {
@@ -91,26 +92,13 @@ public class PlayerController : MonoBehaviour
         Move();
         jump();
     }
-    private void HandleWall()
-    {
-        isWallDetected = Physics2D.Raycast(m_transformPlayer.transform.position, Vector2.right * direction, checkWallDistance, groundLayer);
-    }
+   
     private void CheckCollicion()
     {
         HandleGound();
         HandleWall();
         HandleWallSlider();
     }
-
-    private void HandleWallSlider()
-    {
-        canWallSlide = isWallDetected;
-        if(!canWallSlide) return;
-        canDoubleJump = false;
-        slideSpeed = m_gatherInput.Value.y < 0 ? 1 : 0.5f;
-        m_rigigbody2D.linearVelocity = new Vector2(m_rigigbody2D.linearVelocityX, m_rigigbody2D.linearVelocity.y * slideSpeed);
-    }
-
     private void HandleGound()
     {
         lFootRay = Physics2D.Raycast(lFoot.position, Vector2.down, rayLength, groundLayer);
@@ -127,16 +115,25 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
-
+    private void HandleWall()
+    {
+        isWallDetected = Physics2D.Raycast(m_transformPlayer.transform.position, Vector2.right * direction, checkWallDistance, groundLayer);
+    }
+    private void HandleWallSlider()
+    {
+        canWallSlide = isWallDetected;
+        if (!canWallSlide) return;
+        canDoubleJump = false;
+        slideSpeed = m_gatherInput.Value.y < 0 ? 1 : 0.5f;
+        m_rigigbody2D.linearVelocity = new Vector2(m_rigigbody2D.linearVelocityX, m_rigigbody2D.linearVelocity.y * slideSpeed);
+    }
     private void Move()
     {
         if (isWallDetected && !isGrounded) return;
         if(isWallJumping) return;
             Flip();
             m_rigigbody2D.linearVelocity = new Vector2(speed * m_gatherInput.Value.x, m_rigigbody2D.linearVelocityY);
-        
     }
-   
     private void Flip()
     {
         if(m_gatherInput.Value.x * direction < 0)

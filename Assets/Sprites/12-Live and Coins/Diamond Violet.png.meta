@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 97eda222896479947b3ed9500e648caf
+guid: 88b1a0fc5ed072c459ef5b81eb55585d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4658123360840285283
-    second: Big Diamond Idle (18x14)_0
+      213: -3691129392665663277
+    second: Diamond Violet_0
   - first:
-      213: -9132469165398134140
-    second: Big Diamond Idle (18x14)_1
+      213: 1428226266758688413
+    second: Diamond Violet_1
   - first:
-      213: -317340658027101851
-    second: Big Diamond Idle (18x14)_2
+      213: 236460167873633349
+    second: Diamond Violet_2
   - first:
-      213: -8617004404026540419
-    second: Big Diamond Idle (18x14)_3
+      213: 8273940767798592195
+    second: Diamond Violet_3
   - first:
-      213: -388936619253760004
-    second: Big Diamond Idle (18x14)_4
+      213: -8627696854103535461
+    second: Diamond Violet_4
   - first:
-      213: 7007702355635686782
-    second: Big Diamond Idle (18x14)_5
+      213: -989706730609524662
+    second: Diamond Violet_5
   - first:
-      213: -5186337078384295754
-    second: Big Diamond Idle (18x14)_6
+      213: 1400958808222778972
+    second: Diamond Violet_6
   - first:
-      213: -3861491957359190046
-    second: Big Diamond Idle (18x14)_7
+      213: 4357592165196398648
+    second: Diamond Violet_7
   - first:
-      213: -1205625001301180620
-    second: Big Diamond Idle (18x14)_8
+      213: 1441218735050820796
+    second: Diamond Violet_8
   - first:
-      213: 7845550569223017404
-    second: Big Diamond Idle (18x14)_9
+      213: 1483823114144639666
+    second: Diamond Violet_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_0
+      name: Diamond Violet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d938a2dab750b5fb0800000000000000
-      internalID: -4658123360840285283
+      spriteID: 3d8e822bf5976ccc0800000000000000
+      internalID: -3691129392665663277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_1
+      name: Diamond Violet_1
       rect:
         serializedVersion: 2
         x: 18
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4827c321ea3f24180800000000000000
-      internalID: -9132469165398134140
+      spriteID: d9ea809f83412d310800000000000000
+      internalID: 1428226266758688413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_2
+      name: Diamond Violet_2
       rect:
         serializedVersion: 2
         x: 36
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56181855a54989bf0800000000000000
-      internalID: -317340658027101851
+      spriteID: 54c13a51543184300800000000000000
+      internalID: 236460167873633349
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_3
+      name: Diamond Violet_3
       rect:
         serializedVersion: 2
         x: 54
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7e750e36204a6880800000000000000
-      internalID: -8617004404026540419
+      spriteID: 3c202458a41f2d270800000000000000
+      internalID: 8273940767798592195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_4
+      name: Diamond Violet_4
       rect:
         serializedVersion: 2
         x: 72
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfffc3994383a9af0800000000000000
-      internalID: -388936619253760004
+      spriteID: b9057653c63444880800000000000000
+      internalID: -8627696854103535461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_5
+      name: Diamond Violet_5
       rect:
         serializedVersion: 2
         x: 90
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7d455ff92c504160800000000000000
-      internalID: 7007702355635686782
+      spriteID: a40c432e8fad342f0800000000000000
+      internalID: -989706730609524662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_6
+      name: Diamond Violet_6
       rect:
         serializedVersion: 2
         x: 108
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b08775d7ed6608b0800000000000000
-      internalID: -5186337078384295754
+      spriteID: c56c21d0d94317310800000000000000
+      internalID: 1400958808222778972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_7
+      name: Diamond Violet_7
       rect:
         serializedVersion: 2
         x: 126
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2efd39a1689396ac0800000000000000
-      internalID: -3861491957359190046
+      spriteID: 8308e8a9cf6497c30800000000000000
+      internalID: 4357592165196398648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_8
+      name: Diamond Violet_8
       rect:
         serializedVersion: 2
         x: 144
@@ -331,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43ffc11f272c44fe0800000000000000
-      internalID: -1205625001301180620
+      spriteID: cbc875abdcc300410800000000000000
+      internalID: 1441218735050820796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_9
+      name: Diamond Violet_9
       rect:
         serializedVersion: 2
         x: 162
@@ -353,8 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb3d6e9dcaef0ec60800000000000000
-      internalID: 7845550569223017404
+      spriteID: 2baea1cb249979410800000000000000
+      internalID: 1483823114144639666
       vertices: []
       indices: 
       edges: []
@@ -363,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 24fc40135f5a2874fa772100d43f974b
+    spriteID: e06dd9b89f0efe843ab705bfbe571530
     internalID: 0
     vertices: []
     indices: 
@@ -373,18 +373,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":14.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6299999952316284,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":14.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6299999952316284,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Big Diamond Idle (18x14)_0: -4658123360840285283
-      Big Diamond Idle (18x14)_1: -9132469165398134140
-      Big Diamond Idle (18x14)_2: -317340658027101851
-      Big Diamond Idle (18x14)_3: -8617004404026540419
-      Big Diamond Idle (18x14)_4: -388936619253760004
-      Big Diamond Idle (18x14)_5: 7007702355635686782
-      Big Diamond Idle (18x14)_6: -5186337078384295754
-      Big Diamond Idle (18x14)_7: -3861491957359190046
-      Big Diamond Idle (18x14)_8: -1205625001301180620
-      Big Diamond Idle (18x14)_9: 7845550569223017404
+      Diamond Violet_0: -3691129392665663277
+      Diamond Violet_1: 1428226266758688413
+      Diamond Violet_2: 236460167873633349
+      Diamond Violet_3: 8273940767798592195
+      Diamond Violet_4: -8627696854103535461
+      Diamond Violet_5: -989706730609524662
+      Diamond Violet_6: 1400958808222778972
+      Diamond Violet_7: 4357592165196398648
+      Diamond Violet_8: 1441218735050820796
+      Diamond Violet_9: 1483823114144639666
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

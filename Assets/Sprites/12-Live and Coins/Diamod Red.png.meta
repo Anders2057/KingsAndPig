@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 97eda222896479947b3ed9500e648caf
+guid: 518111addcd395f45bce5c56fbd0f962
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4658123360840285283
-    second: Big Diamond Idle (18x14)_0
+      213: -7116910340408459470
+    second: Diamod Red_0
   - first:
-      213: -9132469165398134140
-    second: Big Diamond Idle (18x14)_1
+      213: -2149192341764605777
+    second: Diamod Red_1
   - first:
-      213: -317340658027101851
-    second: Big Diamond Idle (18x14)_2
+      213: -8349511976833943982
+    second: Diamod Red_2
   - first:
-      213: -8617004404026540419
-    second: Big Diamond Idle (18x14)_3
+      213: 4308211378831922046
+    second: Diamod Red_3
   - first:
-      213: -388936619253760004
-    second: Big Diamond Idle (18x14)_4
+      213: 790112043308635413
+    second: Diamod Red_4
   - first:
-      213: 7007702355635686782
-    second: Big Diamond Idle (18x14)_5
+      213: 6580690346071715769
+    second: Diamod Red_5
   - first:
-      213: -5186337078384295754
-    second: Big Diamond Idle (18x14)_6
+      213: 8651002253214771806
+    second: Diamod Red_6
   - first:
-      213: -3861491957359190046
-    second: Big Diamond Idle (18x14)_7
+      213: 7706964841605931407
+    second: Diamod Red_7
   - first:
-      213: -1205625001301180620
-    second: Big Diamond Idle (18x14)_8
+      213: 5803712965742048808
+    second: Diamod Red_8
   - first:
-      213: 7845550569223017404
-    second: Big Diamond Idle (18x14)_9
+      213: 5274115650701420052
+    second: Diamod Red_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -140,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_0
+      name: Diamod Red_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d938a2dab750b5fb0800000000000000
-      internalID: -4658123360840285283
+      spriteID: 23f36ad90c7ab3d90800000000000000
+      internalID: -7116910340408459470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_1
+      name: Diamod Red_1
       rect:
         serializedVersion: 2
         x: 18
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4827c321ea3f24180800000000000000
-      internalID: -9132469165398134140
+      spriteID: fa8712bb3f88c22e0800000000000000
+      internalID: -2149192341764605777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_2
+      name: Diamod Red_2
       rect:
         serializedVersion: 2
         x: 36
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 56181855a54989bf0800000000000000
-      internalID: -317340658027101851
+      spriteID: 25671fc3813902c80800000000000000
+      internalID: -8349511976833943982
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_3
+      name: Diamod Red_3
       rect:
         serializedVersion: 2
         x: 54
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d7e750e36204a6880800000000000000
-      internalID: -8617004404026540419
+      spriteID: e7392945c67d9cb30800000000000000
+      internalID: 4308211378831922046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_4
+      name: Diamod Red_4
       rect:
         serializedVersion: 2
         x: 72
@@ -243,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfffc3994383a9af0800000000000000
-      internalID: -388936619253760004
+      spriteID: 5155b2a97ba07fa00800000000000000
+      internalID: 790112043308635413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_5
+      name: Diamod Red_5
       rect:
         serializedVersion: 2
         x: 90
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7d455ff92c504160800000000000000
-      internalID: 7007702355635686782
+      spriteID: 9bf6276f00f435b50800000000000000
+      internalID: 6580690346071715769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_6
+      name: Diamod Red_6
       rect:
         serializedVersion: 2
         x: 108
@@ -287,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b08775d7ed6608b0800000000000000
-      internalID: -5186337078384295754
+      spriteID: e5a68fdd6b88e0870800000000000000
+      internalID: 8651002253214771806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_7
+      name: Diamod Red_7
       rect:
         serializedVersion: 2
         x: 126
@@ -309,14 +309,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2efd39a1689396ac0800000000000000
-      internalID: -3861491957359190046
+      spriteID: f81a850b0b3a4fa60800000000000000
+      internalID: 7706964841605931407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_8
+      name: Diamod Red_8
       rect:
         serializedVersion: 2
         x: 144
@@ -331,14 +331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43ffc11f272c44fe0800000000000000
-      internalID: -1205625001301180620
+      spriteID: 8263265613eea8050800000000000000
+      internalID: 5803712965742048808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big Diamond Idle (18x14)_9
+      name: Diamod Red_9
       rect:
         serializedVersion: 2
         x: 162
@@ -353,8 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb3d6e9dcaef0ec60800000000000000
-      internalID: 7845550569223017404
+      spriteID: 416e268ad3c613940800000000000000
+      internalID: 5274115650701420052
       vertices: []
       indices: 
       edges: []
@@ -363,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 24fc40135f5a2874fa772100d43f974b
+    spriteID: a422dc2b412019b4da184d20fb3c3d0a
     internalID: 0
     vertices: []
     indices: 
@@ -373,18 +373,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":14.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6299999952316284,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":1.0},"gridSpriteSize":{"x":18.0,"y":14.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6299999952316284,"y":0.5},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Big Diamond Idle (18x14)_0: -4658123360840285283
-      Big Diamond Idle (18x14)_1: -9132469165398134140
-      Big Diamond Idle (18x14)_2: -317340658027101851
-      Big Diamond Idle (18x14)_3: -8617004404026540419
-      Big Diamond Idle (18x14)_4: -388936619253760004
-      Big Diamond Idle (18x14)_5: 7007702355635686782
-      Big Diamond Idle (18x14)_6: -5186337078384295754
-      Big Diamond Idle (18x14)_7: -3861491957359190046
-      Big Diamond Idle (18x14)_8: -1205625001301180620
-      Big Diamond Idle (18x14)_9: 7845550569223017404
+      Diamod Red_0: -7116910340408459470
+      Diamod Red_1: -2149192341764605777
+      Diamod Red_2: -8349511976833943982
+      Diamod Red_3: 4308211378831922046
+      Diamod Red_4: 790112043308635413
+      Diamod Red_5: 6580690346071715769
+      Diamod Red_6: 8651002253214771806
+      Diamod Red_7: 7706964841605931407
+      Diamod Red_8: 5803712965742048808
+      Diamod Red_9: 5274115650701420052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
