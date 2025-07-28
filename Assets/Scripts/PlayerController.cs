@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
@@ -20,7 +21,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Move Settings")]
     [SerializeField]private float speed;
+    [SerializeField] private bool canMove;
+    [SerializeField] private float moveDelay;
+
     private int direction = 1;
+    
     
     [Header("Jump Settings")]
     [SerializeField] private float jumpForce;
@@ -65,15 +70,26 @@ public class PlayerController : MonoBehaviour
        // m_transformPlayer = GetComponent<Transform>();
         m_rigigbody2D = GetComponent<Rigidbody2D>();
         m_animator = GetComponent<Animator>();
+        canMove = false;
+        StartCoroutine(CanMoveRoutine());
     }
+
+    IEnumerator CanMoveRoutine()
+    {
+        
+        yield return new WaitForSeconds(moveDelay);
+        canMove = true ;
+
+    }
+
     void Start()
     {
         idSpeed = Animator.StringToHash("Speed");
         idIsGrounded = Animator.StringToHash("IsGrounded");
         idIsWallDetected = Animator.StringToHash("IsWallDetected");
         idKnockBack = Animator.StringToHash("KnockBack");
-        lFoot = GameObject.Find("LFoot").GetComponent<Transform>();
-        rFoot = GameObject.Find("RFoot").GetComponent<Transform>();
+       //lFoot = GameObject.Find("LFoot").GetComponent<Transform>();
+       //rFoot = GameObject.Find("RFoot").GetComponent<Transform>();
         CounterExtraJumps = extraJumps;
         GameManager.instance.AddScore();
     }
@@ -90,6 +106,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (!canMove) return;
         if(isKnocked) return;
         CheckCollicion();
         Move();
@@ -207,7 +224,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Die() 
-    { 
+    {
         GameObject deathVFXPrefab = Instantiate(deadVFX,transform.position,Quaternion.identity);
         Destroy(gameObject); 
     }

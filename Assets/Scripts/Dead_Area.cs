@@ -7,11 +7,11 @@ public class Dead_Area : MonoBehaviour
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player")) return;
         {
             player = collision.gameObject.GetComponent<PlayerController>();
-
             player.Die();
+            GameManager.instance.RespawnPlayer();
         }
     }
 }
