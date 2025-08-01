@@ -24,13 +24,13 @@ public class Diamond : MonoBehaviour
     }
     private void Start()
     {
-        gameManager = GameManager.instance;
+        gameManager = GameManager.Instance;
         SetRandomDiamond();
     }
 
     private void SetRandomDiamond()
     {
-        if (!GameManager.instance.DiamondHaveRandomLook())
+        if (!GameManager.Instance.DiamondHaveRandomLook())
         {
             UpdateDimondType();
             return;
