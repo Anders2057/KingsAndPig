@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private readonly int idIsWallDetected = Animator.StringToHash("IsWallDetected");
     private readonly int idKnockBack = Animator.StringToHash("KnockBack");
     private readonly int idIdel = Animator.StringToHash("Idel");
+    private readonly int idDoorIn = Animator.StringToHash("DoorIn");
 
     [Header("Move Settings")]
     [SerializeField]private float speed;
@@ -224,6 +227,20 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(knockDuration);
         isKnocked= false;
         //canBeKnocked = true;
+    }
+    public void DoorIn()
+    {
+        m_rigigbody2D.linearVelocity = Vector2.zero;
+        m_animator.Play(idIdel);
+        m_animator.SetBool(idDoorIn, true);
+        canMove = false;
+        StartCoroutine(DoorInRoutine());
+    }
+
+    private IEnumerator DoorInRoutine()
+    {
+        yield return new WaitForSeconds(moveDelay);
+        SceneManager.LoadScene(0);
     }
 
     public void Die() 
