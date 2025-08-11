@@ -324,8 +324,7 @@ MonoBehaviour:
   canWallSlide: 0
   slideSpeed: 0
   isKnocked: 0
-  canBeKnocked: 0
-  knockedPower: {x: 3, y: 0.3}
+  knockedPower: {x: 3, y: 4}
   knockDuration: 0.5
   deadVFX: {fileID: 6680226609289541119, guid: 4b2c9d1676a36c041a99e70ea05397e5, type: 3}
 --- !u!114 &1875554519967209248

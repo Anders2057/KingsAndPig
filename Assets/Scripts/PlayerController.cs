@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private readonly int idIsGrounded = Animator.StringToHash("IsGrounded");
     private readonly int idSpeed = Animator.StringToHash("Speed");
     private readonly int idIsWallDetected = Animator.StringToHash("IsWallDetected");
-    private readonly int idKnockBack = Animator.StringToHash("KnockBack");
+    private readonly int idKnockBack = Animator.StringToHash("IsKnockBack");
     private readonly int idIdel = Animator.StringToHash("Idel");
     private readonly int idDoorIn = Animator.StringToHash("DoorIn");
 
@@ -217,16 +217,15 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(KnockBackRountine());
         m_rigigbody2D.linearVelocity = new Vector2(knockedPower.x * -direction, knockedPower.y);
-        m_animator.SetTrigger(idKnockBack);
     }
 
     private IEnumerator KnockBackRountine()
     {
         isKnocked = true;
-        //canBeKnocked = false;
+        m_animator.SetBool(idKnockBack,isKnocked);
         yield return new WaitForSeconds(knockDuration);
         isKnocked= false;
-        //canBeKnocked = true;
+        m_animator.SetBool(idKnockBack, isKnocked);
     }
     public void DoorIn()
     {

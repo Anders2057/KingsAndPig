@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Diamond Manager")]
     [SerializeField]private int _diamondCollected;
     [SerializeField] private bool _diamondHaveRandomLook;
+    [SerializeField] private int totalDiamond;
 
     public int DiamondCollected { get => _diamondCollected; }
 
@@ -28,6 +29,19 @@ public class GameManager : MonoBehaviour
         if(Instance == null ) Instance = this;
         else Destroy(gameObject);
     }
+
+    private void Start()
+    {
+        TotalDiamondsLevel();
+    }
+
+    private void TotalDiamondsLevel()
+    {
+        //Diamond[] diamonds = FindObjectsByType<Diamond>(FindObjectsSortMode.None);
+        GameObject[] diamonds = GameObject.FindGameObjectsWithTag("Diamond"); 
+        totalDiamond = diamonds.Length;
+    }
+
     public void RespawnPlayer()
     {
         if (hasCheckPointActive)
