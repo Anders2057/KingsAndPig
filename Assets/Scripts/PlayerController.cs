@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -56,14 +57,17 @@ public class PlayerController : MonoBehaviour
     [Header("KnockBack Setting")]
     [SerializeField] private bool isKnocked;
    // [SerializeField] private bool canBeKnocked;
-    [SerializeField] private Vector2 knockedPower;
+    [SerializeField] private Vector2 defaultKnokeckedPower;
     [SerializeField] private float knockDuration;
-
+    private Vector2 _knockedPower;
+    public Vector2 KnockedPower { get => _knockedPower; set => _knockedPower = value; }
+   
     [Header("DeadVFX")]
     [SerializeField] private GameObject deadVFX;
 
     private void Awake()
     {
+        _knockedPower = defaultKnokeckedPower;
         m_gatherInput = GetComponent<GatherInput>();
         m_transformPlayer = GetComponent<Transform>();
         m_rigigbody2D = GetComponent<Rigidbody2D>();
@@ -147,6 +151,7 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleWallSlider()
     {
+        if (m_rigigbody2D.linearVelocityY > 0.1) return;
         canWallSlide = isWallDetected;
         if (!canWallSlide) return;
         canDoubleJump = false;
@@ -167,13 +172,11 @@ public class PlayerController : MonoBehaviour
             HandleDirection();
         }
     }
-
     private void HandleDirection()
     {
         m_transformPlayer.localScale = new Vector3(-m_transformPlayer.localScale.x, 1, 1);
         direction *= -1;
     }
-
     private void jump()
     {
         if (m_gatherInput.IsJumping) 
@@ -194,7 +197,6 @@ public class PlayerController : MonoBehaviour
         }
         m_gatherInput.IsJumping = false;
     }
-
     private void WallJump()
     {
         m_rigigbody2D.linearVelocity = new Vector2(wallJumpForce.x * -direction, wallJumpForce.y);
@@ -213,10 +215,15 @@ public class PlayerController : MonoBehaviour
         m_rigigbody2D.linearVelocity = new Vector2(speed * m_gatherInput.Value.x, jumpForce);
         CounterExtraJumps--;
     }
-    public void KnockBack()
+    public void KnockBack( float sourceDamageXPosition)
     {
+        float _direction = 1;
+        if (transform.position.x < sourceDamageXPosition)
+        {
+            _direction = -1;
+        }
         StartCoroutine(KnockBackRountine());
-        m_rigigbody2D.linearVelocity = new Vector2(knockedPower.x * -direction, knockedPower.y);
+        m_rigigbody2D.linearVelocity = new Vector2(KnockedPower.x * _direction, KnockedPower.y);
     }
 
     private IEnumerator KnockBackRountine()
@@ -226,6 +233,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(knockDuration);
         isKnocked= false;
         m_animator.SetBool(idKnockBack, isKnocked);
+        _knockedPower = new Vector2(defaultKnokeckedPower.x, defaultKnokeckedPower.y);
     }
     public void DoorIn()
     {

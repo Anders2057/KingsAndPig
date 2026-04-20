@@ -6,7 +6,7 @@ public class DangerousEnvironment: MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerController>().KnockBack();
+            collision.GetComponent<PlayerController>().KnockBack(transform.position.x);
         }
     }
 
