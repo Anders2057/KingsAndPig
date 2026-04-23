@@ -255,7 +255,18 @@ public class PlayerController : MonoBehaviour
         GameObject deathVFXPrefab = Instantiate(deadVFX,transform.position,Quaternion.identity);
         Destroy(gameObject); 
     }
-
+    public void Push(Vector2 direction,float duration = 0)
+    {
+        StartCoroutine(PushCorutine(direction,duration));
+    }
+    public IEnumerator PushCorutine(Vector2 direction,float duration)
+    {
+        canMove = false;
+        m_rigigbody2D.linearVelocity = Vector2.zero;
+        m_rigigbody2D.AddForce(direction,ForceMode2D.Impulse);
+        yield return new WaitForSeconds(duration);
+        canMove=true;
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
