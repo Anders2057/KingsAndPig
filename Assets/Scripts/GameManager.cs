@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _diamondHaveRandomLook;
     [SerializeField] private int totalDiamond;
 
+    [Header("Traps")]
+    public GameObject arrowPrefab;
+
     public int DiamondCollected { get => _diamondCollected; }
 
     private void Awake()
@@ -57,6 +60,19 @@ public class GameManager : MonoBehaviour
         newPlayer.name = "Player";
         _playerController = newPlayer.GetComponent<PlayerController>();
     }
+
+    public void CreateObject (GameObject prefab, Transform target, float delay)
+    {
+        StartCoroutine(CreateObjectCourutine( prefab,target,delay));
+    }
+
+    private IEnumerator CreateObjectCourutine(GameObject prefab, Transform target, float delay)
+    {
+        Vector3 newPosition = target.position;
+        yield return new WaitForSeconds(delay);
+        GameObject newObject = Instantiate(prefab, newPosition, Quaternion.identity);
+    }
+
     public void AddScore()
     {
         Debug.Log("Added Score");

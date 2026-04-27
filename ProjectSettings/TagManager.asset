@@ -62,5 +62,8 @@ TagManager:
   - name: Items
     uniqueID: 2613634289
     locked: 0
+  - name: Traps
+    uniqueID: 680559621
+    locked: 0
   m_RenderingLayers:
   - Default
