@@ -247,8 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.75
   distance: 1
-  canMove: 1
-  canFall: 0
+  canFall: 1
   fallDelay: 1
   impactSpeed: 3
   impactDuration: 0.1

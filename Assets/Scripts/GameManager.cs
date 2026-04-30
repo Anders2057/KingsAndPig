@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Traps")]
     public GameObject arrowPrefab;
+    public GameObject fallingPlataformPrefab;
 
     public int DiamondCollected { get => _diamondCollected; }
 
@@ -61,16 +62,16 @@ public class GameManager : MonoBehaviour
         _playerController = newPlayer.GetComponent<PlayerController>();
     }
 
-    public void CreateObject (GameObject prefab, Transform target, float delay)
+    public void CreateObject (GameObject prefab, Vector3 position, float delay)
     {
-        StartCoroutine(CreateObjectCourutine( prefab,target,delay));
+        StartCoroutine(CreateObjectCourutine( prefab, position,delay));
     }
 
-    private IEnumerator CreateObjectCourutine(GameObject prefab, Transform target, float delay)
+    private IEnumerator CreateObjectCourutine(GameObject prefab, Vector3 position, float delay)
     {
-        Vector3 newPosition = target.position;
+        
         yield return new WaitForSeconds(delay);
-        GameObject newObject = Instantiate(prefab, newPosition, Quaternion.identity);
+        GameObject newObject = Instantiate(prefab, position, Quaternion.identity);
     }
 
     public void AddScore()

@@ -23,6 +23,11 @@ public class FallingPlataformController : MonoBehaviour
     private float impactTimer;
     private bool impacHappened;
 
+    [Header("Respawn Settings")]
+    [SerializeField] private bool canRespawn = true;
+    [SerializeField] private float respawnTime = 2f;
+    [SerializeField] private float destroyerTimer = 2f;
+
     private void Awake()
     {
         m_Animator = GetComponent<Animator>();
@@ -99,5 +104,24 @@ public class FallingPlataformController : MonoBehaviour
         {
             collider.enabled = false;
         }
+
+        if (!canFall) return;
+
+        if (canRespawn)
+        {
+            GameObject plataformPrefab = GameManager.Instance.fallingPlataformPrefab;
+            Vector3 respawnPosition = transform.position;
+            GameManager.Instance.CreateObject(plataformPrefab, respawnPosition,respawnTime);
+            Invoke(nameof(DestroyPlataform),respawnTime);
+        }
+        else
+        {
+            Invoke(nameof(DestroyPlataform), destroyerTimer);
+        }
+    }
+
+    private void DestroyPlataform()
+    {
+        Destroy(gameObject);
     }
 }
