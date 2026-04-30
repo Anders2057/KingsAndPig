@@ -15477,7 +15477,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4166783934675054044, guid: ac5ea55469391a84dbec9441aafd7c60, type: 3}
-      propertyPath: canFall
+      propertyPath: targetScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166783934675054044, guid: ac5ea55469391a84dbec9441aafd7c60, type: 3}
+      propertyPath: targetScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166783934675054044, guid: ac5ea55469391a84dbec9441aafd7c60, type: 3}
+      propertyPath: targetScale.z
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5914581304306764146, guid: ac5ea55469391a84dbec9441aafd7c60, type: 3}

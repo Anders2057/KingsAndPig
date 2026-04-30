@@ -28,6 +28,11 @@ public class FallingPlataformController : MonoBehaviour
     [SerializeField] private float respawnTime = 2f;
     [SerializeField] private float destroyerTimer = 2f;
 
+    [Space]
+    [SerializeField] private float scaleUpSpeed = 10f;
+    [SerializeField] private Vector3 targetScale;
+
+
     private void Awake()
     {
         m_Animator = GetComponent<Animator>();
@@ -37,12 +42,14 @@ public class FallingPlataformController : MonoBehaviour
 
     public void Start()
     {
+        transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         SetupWayPoint();
         float randomDelay = Random.Range(0,0.6f);
         Invoke(nameof(ActivatePlataform),randomDelay);
     }
     private void Update()
     {
+        HandleScaleUp();
         HandleImpact();
         HandleMovement();
     }
@@ -90,6 +97,14 @@ public class FallingPlataformController : MonoBehaviour
         impactTimer = impactDuration;
         impacHappened = true;
         
+    }
+
+    private void HandleScaleUp()
+    {
+        if (transform.localScale.x < targetScale.x)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleUpSpeed * Time.deltaTime);
+        }
     }
     private void SwitchOffPlataform()
     {

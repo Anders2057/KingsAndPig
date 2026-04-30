@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5914581304306764146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49, y: 2.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,3 +251,8 @@ MonoBehaviour:
   fallDelay: 1
   impactSpeed: 3
   impactDuration: 0.1
+  canRespawn: 1
+  respawnTime: 2
+  destroyerTimer: 2
+  scaleUpSpeed: 10
+  targetScale: {x: 1, y: 1, z: 1}
