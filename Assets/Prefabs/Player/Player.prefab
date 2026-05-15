@@ -101,6 +101,7 @@ Transform:
   m_Children:
   - {fileID: 1352630209278897220}
   - {fileID: 4483710206154602722}
+  - {fileID: 6973445219068948460}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4320500132791830225
@@ -304,6 +305,12 @@ MonoBehaviour:
   speed: 5
   canMove: 0
   moveDelay: 1
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 2048
+  enemyCheck: {fileID: 6973445219068948460}
+  enemyCheckRadius: 0.15
+  enemyBounceForce: 6
   jumpForce: 13
   extraJumps: 1
   CounterExtraJumps: 0
@@ -311,11 +318,11 @@ MonoBehaviour:
   canDoubleJump: 0
   wallJumpForce: {x: 5, y: 8}
   isWallJumping: 0
-  wallJumpDuration: 0.4
+  wallJumpDuration: 0.3
   rFoot: {fileID: 1352630209278897220}
   lFoot: {fileID: 4483710206154602722}
   isGrounded: 0
-  rayLength: 0.3
+  rayLength: 0.4
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -326,7 +333,6 @@ MonoBehaviour:
   isKnocked: 0
   defaultKnokeckedPower: {x: 3, y: 4}
   knockDuration: 0.5
-  _knockedPower: {x: 3, y: 4}
   deadVFX: {fileID: 6680226609289541119, guid: 4b2c9d1676a36c041a99e70ea05397e5, type: 3}
 --- !u!114 &1875554519967209248
 MonoBehaviour:
@@ -342,3 +348,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entranceDoor: {fileID: 0}
   animatorEntranceDoor: {fileID: 0}
+--- !u!1 &7897490077916092770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6973445219068948460}
+  m_Layer: 6
+  m_Name: EnemyCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6973445219068948460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897490077916092770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2178468508166350927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

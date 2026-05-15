@@ -19,7 +19,7 @@ TagManager:
   - Ignore
   - Items
   - Traps
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: FrontGround
     uniqueID: 1716409261
+    locked: 0
+  - name: Enemy
+    uniqueID: 2915490089
     locked: 0
   - name: Items
     uniqueID: 2613634289

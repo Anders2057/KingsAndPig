@@ -18,5 +18,12 @@ public class TrampolineController : MonoBehaviour
             player.Push(transform.up * pushPower,duration);
             m_Animator.SetTrigger("active");
         }
+
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy!= null)
+        {
+            enemy.Push(transform.up * pushPower);
+            m_Animator.SetTrigger("active");
+        }
     }
 }

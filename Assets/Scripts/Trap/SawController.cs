@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -30,6 +31,16 @@ public class SawController : MonoBehaviour
 
     private void UpdateWaypoints()
     {
+        List<SawWayPoint> wayPointsList = new List<SawWayPoint>(GetComponentsInChildren<SawWayPoint>());
+        if (wayPointsList.Count != wayPoins.Length)
+        {
+            wayPoins = new Transform[wayPointsList.Count];
+            for (int i = 0; i < wayPointsList.Count; i++)
+            {
+                wayPoins[i] = wayPointsList[i].transform;
+            }
+        }
+
         wayPoinsPosition = new Vector3[wayPoins.Length];
         for (int i = 0; i < wayPoins.Length; i++)
         {

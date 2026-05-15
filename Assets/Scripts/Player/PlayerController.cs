@@ -26,8 +26,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private float speed;
     [SerializeField] private bool canMove;
     [SerializeField] private float moveDelay;
-
     private int direction = 1;
+
+    [Header("Enemy Setting")]
+    [SerializeField] private LayerMask whatIsEnemy;
+    [SerializeField] private Transform enemyCheck;
+    [SerializeField] private float enemyCheckRadius;
+    [SerializeField] private float enemyBounceForce = 12f;
     
     [Header("Jump Settings")]
     [SerializeField] private float jumpForce;
@@ -113,15 +118,39 @@ public class PlayerController : MonoBehaviour
         m_animator.SetBool(idIsWallDetected, isWallDetected);
         m_animator.SetBool(idIsGrounded, isGrounded);
     }
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (!canMove) return;
         if(isKnocked) return;
+        HandleEnemyDetection();
         CheckCollicion();
         Move();
         jump();
     }
-   
+
+    private void HandleEnemyDetection()
+    {
+        if(m_rigigbody2D.linearVelocityY > -0.5f) return;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(enemyCheck.position, enemyCheckRadius, whatIsEnemy);
+        
+        foreach(var enemy in colliders)
+        {
+            Enemy newEnemy = enemy.GetComponent<Enemy>();
+            if (newEnemy == null) continue;
+
+            float stompMargin = 0.02f;
+            bool isAbove = enemyCheck.position.y > enemy.bounds.max.y - stompMargin;
+            if (!isAbove) continue;
+
+            newEnemy.Die();
+            m_rigigbody2D.linearVelocity = new Vector2 (m_rigigbody2D.linearVelocityX,enemyBounceForce);
+            CounterExtraJumps = extraJumps;
+            canDoubleJump = true;
+
+            break;
+        }
+    }
+
     private void CheckCollicion()
     {
         HandleGound();
@@ -271,5 +300,8 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawLine(m_transformPlayer.transform.position, new Vector2(m_transformPlayer.position.x + (checkWallDistance * direction), m_transformPlayer.position.y));
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(enemyCheck.position, enemyCheckRadius);
     }
 }
